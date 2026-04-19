@@ -24,7 +24,6 @@ O cálculo da multa foi escrito mais de uma vez no código.
 Tudo misturado no mesmo lugar
 Menu, regras e dados estão tudo juntos.
 
-
 ---
 
 ## Revisão com vocabulário técnico
