@@ -114,3 +114,22 @@ isola o cálculo; fazer isso com componentes reais seria mais frágil e
 lento, e um eventual erro apontaria para um trecho maior, dificultando o
 diagnóstico. A unidade localiza a falha com precisão; a integração garante
 que as peças se encaixam. As duas se complementam — nenhuma substitui a outra.
+
+## Aula 09 — TDD
+
+Comparando o mesmo comportamento escrito como teste TDD (`assert multa == 0.0`)
+e como cenário BDD (`Dado um atraso de 1 dia ... Então a multa deve ser R$ 0,00`),
+o BDD comunica melhor com um cliente **não técnico**. O motivo é a linguagem: o
+Given-When-Then descreve o comportamento observável em português corrente, sem
+`assert`, sem nome de função, sem tipo de retorno — alguém do negócio lê o cenário
+e concorda (ou discorda) com a regra. O teste TDD fala a língua do desenvolvedor:
+é mais preciso, mas pressupõe ler código.
+
+Eu preferiria **BDD** quando a especificação precisa ser validada por quem não
+programa — o setor de patrimônio que define a regra da multa, por exemplo —, ou
+quando o "o que" (o comportamento de negócio) importa mais que o "como". Preferiria
+**TDD** para regras internas finas, algoritmos e código sem um "cliente de negócio"
+claro, onde a precisão do `assert` rende mais que o alcance da linguagem natural.
+Na prática os dois convivem: BDD nos fluxos de negócio, TDD nas unidades. Nos dois,
+o teste vem antes e guia o design.
+
