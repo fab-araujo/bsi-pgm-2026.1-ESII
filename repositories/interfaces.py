@@ -8,7 +8,7 @@ from models.emprestimo import Emprestimo
 class IRepositorioEmprestimo(ABC):
     """Contrato de persistência consumido pelo ServicoEmprestimo (DIP).
 
-    Declara os 8 métodos que o serviço usa hoje. Qualquer implementação
+    Declara os 9 métodos que o serviço usa hoje. Qualquer implementação
     — a concreta de produção ou um dublê de teste — precisa fornecer
     todos eles: o Python recusa instanciar uma subclasse que esqueça
     algum `@abstractmethod`. É isso que torna os dublês seguros.
@@ -37,3 +37,6 @@ class IRepositorioEmprestimo(ABC):
 
     @abstractmethod
     def proximo_id_emprestimo(self) -> int: ...
+
+    @abstractmethod
+    def contar_emprestimos_abertos(self, usuario_email: str) -> int: ...

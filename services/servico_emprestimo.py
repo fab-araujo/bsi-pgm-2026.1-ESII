@@ -17,6 +17,10 @@ class ServicoEmprestimo:
             print("Equipamento inválido ou indisponível")
             return False
 
+        if self.repositorio.contar_emprestimos_abertos(usuario_email) >= 2:
+            print("Limite de empréstimos simultâneos atingido")
+            return False
+
         data_emprestimo = datetime.date.today()
         data_devolucao  = data_emprestimo + datetime.timedelta(days=dias)
 

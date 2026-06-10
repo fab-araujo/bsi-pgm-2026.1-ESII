@@ -50,6 +50,10 @@ class RepositorioFake(IRepositorioEmprestimo):
     def proximo_id_emprestimo(self):
         return len(self._emprestimos) + 1
 
+    def contar_emprestimos_abertos(self, usuario_email):
+        return sum(1 for e in self._emprestimos
+                   if e.usuario_email == usuario_email)
+
 
 # Spy — registra as chamadas para verificação posterior no assert.
 class NotificadorSpy(INotificador):

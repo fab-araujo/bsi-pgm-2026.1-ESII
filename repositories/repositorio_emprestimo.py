@@ -44,3 +44,7 @@ class RepositorioEmprestimo(IRepositorioEmprestimo):
 
     def proximo_id_emprestimo(self) -> int:
         return len(self._emprestimos) + 1
+
+    def contar_emprestimos_abertos(self, usuario_email: str) -> int:
+        return sum(1 for e in self._emprestimos
+                   if e.usuario_email == usuario_email)
