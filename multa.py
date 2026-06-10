@@ -1,4 +1,8 @@
 def calcular_multa_com_carencia(dias_atraso, valor_dia, carencia=2):
-    if dias_atraso == 0:          # ingenuo: resolve so o teste do ciclo 1
-        return 0.0
-    return (dias_atraso - carencia) * valor_dia
+    """Multa proporcional aos dias que excedem a carência.
+
+    Dentro da carência (ou sem atraso) a multa é zero.
+    Nunca retorna valor negativo.
+    """
+    dias_cobraveis = max(0, dias_atraso - carencia)
+    return round(dias_cobraveis * valor_dia, 2)
