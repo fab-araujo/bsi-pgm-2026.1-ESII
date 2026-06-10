@@ -5,6 +5,9 @@ from services.interfaces import INotificador
 
 
 class ServicoEmprestimo:
+    # Máximo de empréstimos simultâneos (em aberto) por usuário.
+    LIMITE_EMPRESTIMOS = 2
+
     def __init__(self, repositorio: IRepositorioEmprestimo,
                  notificador: INotificador):
         self.repositorio = repositorio
@@ -17,7 +20,7 @@ class ServicoEmprestimo:
             print("Equipamento inválido ou indisponível")
             return False
 
-        if self.repositorio.contar_emprestimos_abertos(usuario_email) >= 2:
+        if self.repositorio.contar_emprestimos_abertos(usuario_email) >= self.LIMITE_EMPRESTIMOS:
             print("Limite de empréstimos simultâneos atingido")
             return False
 
