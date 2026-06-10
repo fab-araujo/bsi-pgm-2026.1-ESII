@@ -52,7 +52,7 @@ class RepositorioFake(IRepositorioEmprestimo):
 
     def contar_emprestimos_abertos(self, usuario_email):
         return sum(1 for e in self._emprestimos
-                   if e.usuario_email == usuario_email)
+                   if e.usuario_email == usuario_email and not e.devolvido)
 
 
 # Spy — registra as chamadas para verificação posterior no assert.

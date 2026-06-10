@@ -47,4 +47,4 @@ class RepositorioEmprestimo(IRepositorioEmprestimo):
 
     def contar_emprestimos_abertos(self, usuario_email: str) -> int:
         return sum(1 for e in self._emprestimos
-                   if e.usuario_email == usuario_email)
+                   if e.usuario_email == usuario_email and not e.devolvido)
