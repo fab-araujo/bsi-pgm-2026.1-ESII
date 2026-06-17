@@ -25,9 +25,10 @@ duas pastas**.
 | `aula06/` | **DIP** | Injeção de dependência + interfaces `abc.ABC` |
 | `aula08/` | Testes + CI | Suíte (unidade/integração) + pipeline de CI |
 | `aula09/` | **TDD** | Kata `multa.py` + funcionalidade nova + cenário BDD |
+| `aula10/` | **Factory + Facade** | `FabricaEquipamento` centraliza a criação + fachada `SistemaDeEmprestimos` (pacote `app/`) enxuga o `main.py` |
 
 > **Não existe `aula07/`** — a Aula 7 é a prova escrita, sem entrega de código.
-> Este repositório vai **até a Aula 9** (o Bloco NAP 2 segue em andamento).
+> Este repositório vai **até a Aula 10** (o Bloco NAP 2 segue em andamento).
 
 ---
 
@@ -64,11 +65,11 @@ cd aula05            # entre na pasta da aula que quiser
   ```bash
   python emprestimos.py
   ```
-- **`aula04` … `aula09`** — já é o projeto organizado em camadas:
+- **`aula04` … `aula10`** — já é o projeto organizado em camadas:
   ```bash
   python main.py
   ```
-- **`aula08` e `aula09`** — têm testes automatizados:
+- **`aula08` … `aula10`** — têm testes automatizados:
   ```bash
   pip install -r requirements-dev.txt
   pytest -v
@@ -139,7 +140,7 @@ e o pipeline roda de verdade a cada push.
 | `if/elif` por tipo + cálculo de multa duplicado | `aula05` | OCP |
 | Dependências criadas internamente (não testável) | `aula06` | DIP |
 | Zero testes automatizados | `aula08` | Testes + CI |
+| Criação de objetos espalhada (cliente conhece classes concretas) | `aula10` | Factory + Facade |
 
-> Os itens restantes (criação de objetos espalhada, algoritmo acoplado, notificação
-> direta e *code smells*) são tratados nas **Aulas 10–12** e entrarão aqui em ofertas
-> futuras.
+> Os itens restantes (algoritmo de multa acoplado à hierarquia, notificação direta e
+> *code smells*) são tratados nas **Aulas 11–12** e entrarão aqui em ofertas futuras.
