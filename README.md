@@ -27,9 +27,10 @@ duas pastas**.
 | `aula09/` | **TDD** | Kata `multa.py` + funcionalidade nova + cenário BDD |
 | `aula10/` | **Factory + Facade** | `FabricaEquipamento` centraliza a criação + fachada `SistemaDeEmprestimos` (pacote `app/`) enxuga o `main.py` |
 | `aula11/` | **Strategy + Observer** | Multa vira estratégia trocável (`models/multa_strategy.py`) + serviço emite eventos para observers (`services/observer.py`, `NotificadorEmail`) |
+| `aula12/` | **Refactoring + Code Smells** | Evento-`dict` vira `@dataclass Evento` + renames e Extract Function; `docs/diagnostico_a12.md` cataloga os smells (incl. o falso positivo) |
 
 > **Não existe `aula07/`** — a Aula 7 é a prova escrita, sem entrega de código.
-> Este repositório vai **até a Aula 11** (o Bloco NAP 2 segue em andamento).
+> Este repositório vai **até a Aula 12** (o Bloco NAP 2 segue em andamento).
 
 ---
 
